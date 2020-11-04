@@ -32,15 +32,4 @@ public class Fibo {
             matrix.pow(i-1);
             return matrix.getA()[0][0];
         }
-
-        public static void main(String[] arg){
-            Matrix matrix = new Matrix();
-            BigInteger[][] init = {{BigInteger.valueOf(1),BigInteger.valueOf(1)},{BigInteger.valueOf(1),BigInteger.valueOf(0)}};
-            matrix.setA(init);
-            Matrix matrix2 = new Matrix();
-            BigInteger[][] init2 = {{BigInteger.valueOf(2),BigInteger.valueOf(5)},{BigInteger.valueOf(3),BigInteger.valueOf(4)}};
-            matrix2.setA(init2);
-            matrix.multiply(matrix2);
-            System.out.println(matrix.getA()[1][1]);
-        }
 }
