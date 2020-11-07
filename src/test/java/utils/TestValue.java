@@ -3,6 +3,7 @@ package utils;
 public class TestValue {
     private String inputString;
     private String expectedResult;
+    private String secondExpectedResult;
 
     public String getInputString() {
         return inputString;
@@ -20,4 +21,11 @@ public class TestValue {
         this.expectedResult = expectedResult;
     }
 
+    public String getSecondExpectedResult() {
+        return secondExpectedResult;
+    }
+
+    public void setSecondExpectedResult(String secondExpectedResult) {
+        this.secondExpectedResult = secondExpectedResult;
+    }
 }
