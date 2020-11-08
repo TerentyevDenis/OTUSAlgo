@@ -4,6 +4,7 @@ public class TestValue {
     private String inputString;
     private String secondInputString;
     private String expectedResult;
+    private String secondExpectedResult;
 
     public String getInputString() {
         return inputString;
@@ -27,5 +28,12 @@ public class TestValue {
 
     public String getSecondInputString() {
         return secondInputString;
+    }
+    public String getSecondExpectedResult() {
+        return secondExpectedResult;
+    }
+
+    public void setSecondExpectedResult(String secondExpectedResult) {
+        this.secondExpectedResult = secondExpectedResult;
     }
 }
