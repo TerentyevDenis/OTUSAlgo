@@ -2,6 +2,7 @@ package utils;
 
 public class TestValue {
     private String inputString;
+    private String secondInputString;
     private String expectedResult;
 
     public String getInputString() {
@@ -20,4 +21,11 @@ public class TestValue {
         this.expectedResult = expectedResult;
     }
 
+    public void setSecondInputString(String secondInputString) {
+        this.secondInputString = secondInputString;
+    }
+
+    public String getSecondInputString() {
+        return secondInputString;
+    }
 }

@@ -24,4 +24,13 @@ public class TestData<T,G> {
         this.input = input;
         this.expectedValue = expectedValue;
     }
+
+    @Override
+    public String toString() {
+        return "TestData{" +
+                "input=" + input +
+                ", expectedValue=" + expectedValue +
+                '}';
+    }
+
 }
