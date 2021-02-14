@@ -70,6 +70,41 @@ public class FileReader {
         }
     }
 
+    public static Stream<TestValue> getTwoTestValues(String resourceName, String fileName){
+        ArrayList<TestValue> testValues = new ArrayList<TestValue>();
+        int testIndex =0;
+        while (true){
+            TestValue testValue = new TestValue();
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream(resourceName + "/"+fileName+"." + testIndex + ".in"), StandardCharsets.UTF_8))){
+                testValue.setInputString(reader.readLine());
+                testValue.setSecondInputString(reader.readLine());
+            } catch (FileNotFoundException e) {
+                if (testValues.isEmpty())
+                    e.printStackTrace();
+                else
+                    return testValues.stream(); //if file not found then we get all test values
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream(resourceName + "/"+fileName+"." + testIndex + ".out"), StandardCharsets.UTF_8))){
+                testValue.setExpectedResult(reader.readLine());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            testValues.add(testValue);
+            testIndex++;
+            if (testIndex==10){
+                return testValues.stream();
+            }
+        }
+    }
+
     public static Stream<TestValue> getTwoExpectedValues(String resourceName){
         ArrayList<TestValue> testValues = new ArrayList<TestValue>();
         int testIndex =0;
